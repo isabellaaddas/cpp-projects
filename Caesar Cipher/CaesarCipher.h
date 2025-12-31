@@ -16,7 +16,7 @@ public:
     const string decrypt(string message);
 private:
     int shift;
-    int alphaArray[26];
+    char alphaArray[26];
     char shiftArray[26];
     string direction;
     void initArray();

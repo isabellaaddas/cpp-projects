@@ -37,13 +37,13 @@ const string CaesarCipher::decrypt(string message) {
 
 /* *** PRIVATE HELPER METHODS *** */
 
-// Initialize the alphaArray with numbers 1-26 to represent the
-// alphabet
+// Initialize the alphaArray with characters of the alphabet (uppercase)
 void CaesarCipher::initArray() {
 
-    // Iterate through entire alphabet
-    for (int i = 0; i < 26; i++) {
-        alphaArray[i] = i + 1;  // i + 1 solves off-by-1 error
+    // Iterate through entire alphabet (start at 65, the decimal char
+    // value of A, through 90, decimal char value of Z)
+    for (int i = 65; i < 91; i++) {
+
     }
 }
 
