@@ -9,13 +9,18 @@ using namespace std;
 // Default constructor for Caesar Cipher class, automatically
 // sets shift to 3 and direction to left
 CaesarCipher::CaesarCipher() {
+    shift = 3;
+    direction = "left";
 
 }
 
 // Alternate constructor for Caesar Cipher class, taking the user's
 // chosen shift number, automatically sets direction to left
 CaesarCipher::CaesarCipher(int newShift) {
-
+    shift = newShift;
+    direction = "left";
+    initArray();
+    initShiftArray();
 }
 
 // Alternate constructor for Caesar Cipher class, taking the user's
@@ -73,6 +78,10 @@ void CaesarCipher::initShiftArray() {
         }
     } else if (direction == "right") {
 
+        // for (int i = 1; i <= 26; i++) {
+        //
+        //
+        // }
     }
 }
 
