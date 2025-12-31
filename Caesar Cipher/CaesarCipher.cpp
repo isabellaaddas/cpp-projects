@@ -33,12 +33,12 @@ CaesarCipher::CaesarCipher(int newShift, string &newDirection) {
     initShiftArray();
 }
 
-void CaesarCipher::encrypt(string message) {
-
+const string CaesarCipher::encrypt(string message) {
+    return "";
 }
 
 const string CaesarCipher::decrypt(string message) {
-
+    return "";
 }
 
 /* *** PRIVATE HELPER METHODS *** */

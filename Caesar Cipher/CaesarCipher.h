@@ -12,7 +12,7 @@ public:
     CaesarCipher(int newShift);
     CaesarCipher(int newShift, string &newDirection);
     ~CaesarCipher();
-    void encrypt(string message);
+    const string encrypt(string message);
     const string decrypt(string message);
 private:
     int shift;
