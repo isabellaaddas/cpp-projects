@@ -14,6 +14,9 @@ public:
     ~CaesarCipher();
     const string encrypt(string message);
     const string decrypt(string message);
+    // Test methods
+    void printAlphaArray();
+    void printShiftArray();
 private:
     int shift;
     char alphaArray[26];

@@ -41,6 +41,19 @@ const string CaesarCipher::decrypt(string message) {
     return "";
 }
 
+/* *** PUBLIC TEST METHODS *** */
+void CaesarCipher::printAlphaArray() {
+    for (int i = 0; i < 26; i++) {
+        cout << alphaArray[i];
+    }
+}
+
+void CaesarCipher::printShiftArray() {
+    for (int i = 0; i < 26; i++) {
+        cout << shiftArray[i];
+    }
+}
+
 /* *** PRIVATE HELPER METHODS *** */
 
 // Initialize the alphaArray with characters of the alphabet (uppercase)
