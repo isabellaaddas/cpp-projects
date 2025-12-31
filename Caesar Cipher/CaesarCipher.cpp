@@ -44,15 +44,19 @@ void CaesarCipher::initArray() {
     // value of A, through 90, decimal char value of Z)
     for (int i = 65; i < 91; i++) {
 
+        // (i - 65) used to resolve index shift of 65
+        alphaArray[i - 65] = i;
     }
 }
 
-// Initialize the shiftArray with shifted numbers 1-26 in given
-// direction to represent the shifted alphabet
+// Initialize the shiftArray with new alphabet based on shift number and
+// direction given by user
 void CaesarCipher::initShiftArray() {
 
     // Decide whether shift is leftward or rightward
     if (direction == "left") {
+
+    } else if (direction == "right") {
 
     }
 }
