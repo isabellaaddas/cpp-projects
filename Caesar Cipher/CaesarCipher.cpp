@@ -20,9 +20,10 @@ CaesarCipher::CaesarCipher(int newShift) {
 
 // Alternate constructor for Caesar Cipher class, taking the user's
 // chosen shift number and direction
-CaesarCipher::CaesarCipher(int newShift, string newDirection) {
+CaesarCipher::CaesarCipher(int newShift, string &newDirection) {
     shift = newShift;
     direction = newDirection;
+    initArray();
 }
 
 void CaesarCipher::encrypt(string message) {
@@ -33,9 +34,16 @@ const string CaesarCipher::decrypt(string message) {
 
 }
 
-// *** PRIVATE HELPER METHODS ***
+/* *** PRIVATE HELPER METHODS *** */
+
+// Initialize the alphaArray with numbers 1-26 to represent the
+// alphabet
 void CaesarCipher::initArray() {
 
+    // Iterate through entire alphabet
+    for (int i = 0; i < 26; i++) {
+        alphaArray[i] = i + 1;  // i + 1 solves off-by-1 error
+    }
 }
 
 CaesarCipher::~CaesarCipher() {

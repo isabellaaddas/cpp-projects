@@ -10,13 +10,13 @@ class CaesarCipher {
 public:
     CaesarCipher();
     CaesarCipher(int newShift);
-    CaesarCipher(int newShift, string newDirection);
+    CaesarCipher(int newShift, string &newDirection);
     ~CaesarCipher();
     void encrypt(string message);
     const string decrypt(string message);
 private:
     int shift;
-    char alphaArray[26];
+    int alphaArray[26];
     char shiftArray[26];
     string direction;
     void initArray();
