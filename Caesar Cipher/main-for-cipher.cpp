@@ -8,4 +8,7 @@ using namespace std;
 
 int main (int argc, char *argv[]) {
     CaesarCipher test = CaesarCipher();
+
+    test.printAlphaArray();
+    test.printShiftArray();
 }
