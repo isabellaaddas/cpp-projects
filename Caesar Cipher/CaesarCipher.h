@@ -10,6 +10,7 @@ class CaesarCipher {
 public:
     CaesarCipher();
     CaesarCipher(int newShift);
+    CaesarCipher(int newShift, string newDirection);
     ~CaesarCipher();
     void encrypt(string message);
     const string decrypt(string message);

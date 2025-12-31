@@ -10,7 +10,13 @@ CaesarCipher::CaesarCipher() {
 
 }
 
+// Alternate constructor for Caesar Cipher class, taking the user's
+// chosen shift number
 CaesarCipher::CaesarCipher(int newShift) {
+
+}
+
+CaesarCipher::CaesarCipher(int newShift, string newDirection) {
 
 }
 
