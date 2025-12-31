@@ -10,5 +10,7 @@ int main (int argc, char *argv[]) {
     CaesarCipher test = CaesarCipher();
 
     test.printAlphaArray();
+    cout << endl;
     test.printShiftArray();
+    cout << endl;
 }
