@@ -19,6 +19,7 @@ private:
     char alphaArray[26];
     char shiftArray[26];
     string direction;
+    void initArray();
 };
 
 
