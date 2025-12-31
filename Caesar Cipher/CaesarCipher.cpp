@@ -11,7 +11,8 @@ using namespace std;
 CaesarCipher::CaesarCipher() {
     shift = 3;
     direction = "left";
-
+    initArray();
+    initShiftArray();
 }
 
 // Alternate constructor for Caesar Cipher class, taking the user's
