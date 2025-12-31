@@ -24,6 +24,7 @@ CaesarCipher::CaesarCipher(int newShift, string &newDirection) {
     shift = newShift;
     direction = newDirection;
     initArray();
+    initShiftArray();
 }
 
 void CaesarCipher::encrypt(string message) {
@@ -43,6 +44,16 @@ void CaesarCipher::initArray() {
     // Iterate through entire alphabet
     for (int i = 0; i < 26; i++) {
         alphaArray[i] = i + 1;  // i + 1 solves off-by-1 error
+    }
+}
+
+// Initialize the shiftArray with shifted numbers 1-26 in given
+// direction to represent the shifted alphabet
+void CaesarCipher::initShiftArray() {
+
+    // Decide whether shift is leftward or rightward
+    if (direction == "left") {
+
     }
 }
 
