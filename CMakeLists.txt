@@ -7,4 +7,5 @@ include_directories("Caesar Cipher")
 
 add_executable(cpp_projects
         "Caesar Cipher/CaesarCipher.cpp"
-        "Caesar Cipher/CaesarCipher.h")
+        "Caesar Cipher/CaesarCipher.h"
+        "Caesar Cipher/main-for-cipher.cpp")
