@@ -42,10 +42,8 @@ void CaesarCipher::initArray() {
 
     // Iterate through entire alphabet (start at 65, the decimal char
     // value of A, through 90, decimal char value of Z)
-    for (int i = 65; i < 91; i++) {
-
-        // (i - 65) used to resolve index shift of 65
-        alphaArray[i - 65] = i;
+    for (int i = 65; i <= 90; i++) {
+        alphaArray[i - 65] = i;     // (i - 65) used to resolve index shift
     }
 }
 
@@ -56,6 +54,23 @@ void CaesarCipher::initShiftArray() {
     // Decide whether shift is leftward or rightward
     if (direction == "left") {
 
+        // Iterate through alphabet (1-26 inclusive) using decimal values
+        // (65-90 inclusive) to calculate correct char value
+        for (int i = 1; i <= 26; i++) {
+
+            // When shifting left, must correctly wrap around to include
+            // the end of the alphabet
+            if ((i - shift) <= 0) {
+                shiftArray[i - 1] = (i - shift) + 90;
+                    // ex: (1 - 3) + 90 = 88, so A becomes X
+            }
+            // After wrapping around, correct for remaining beginning
+            // of the alphabet
+            else {
+                shiftArray[i - 1] = (i - shift) + 64;
+                    // ex: (4 - 3) + 64 = 65, so D becomes A
+            }
+        }
     } else if (direction == "right") {
 
     }
