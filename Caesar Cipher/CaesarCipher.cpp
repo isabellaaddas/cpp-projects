@@ -102,7 +102,92 @@ void CaesarCipher::initShiftArray() {
 // Match argument "origin" with new char value from shiftArray, based on
 // "origin" position in alphaArray
 const char CaesarCipher::matchChar(char orig) {
+    char shiftMatch;
 
+    // Use switch case to convert from normal alphabet to shifted alphabet
+    // based on char, matching to associated index in shiftArray
+    switch (orig) {
+        case 'A':
+            shiftMatch = shiftArray[0];
+            break;
+        case 'B':
+            shiftMatch = shiftArray[1];
+            break;
+        case 'C':
+            shiftMatch = shiftArray[2];
+            break;
+        case 'D':
+            shiftMatch = shiftArray[3];
+            break;
+        case 'E':
+            shiftMatch = shiftArray[4];
+            break;
+        case 'F':
+            shiftMatch = shiftArray[5];
+            break;
+        case 'G':
+            shiftMatch = shiftArray[6];
+            break;
+        case 'H':
+            shiftMatch = shiftArray[7];
+            break;
+        case 'I':
+            shiftMatch = shiftArray[8];
+            break;
+        case 'J':
+            shiftMatch = shiftArray[9];
+            break;
+        case 'K':
+            shiftMatch = shiftArray[10];
+            break;
+        case 'L':
+            shiftMatch = shiftArray[11];
+            break;
+        case 'M':
+            shiftMatch = shiftArray[12];
+            break;
+        case 'N':
+            shiftMatch = shiftArray[13];
+            break;
+        case 'O':
+            shiftMatch = shiftArray[14];
+            break;
+        case 'P':
+            shiftMatch = shiftArray[15];
+            break;
+        case 'Q':
+            shiftMatch = shiftArray[16];
+            break;
+        case 'R':
+            shiftMatch = shiftArray[17];
+            break;
+        case 'S':
+            shiftMatch = shiftArray[18];
+            break;
+        case 'T':
+            shiftMatch = shiftArray[19];
+            break;
+        case 'U':
+            shiftMatch = shiftArray[20];
+            break;
+        case 'V':
+            shiftMatch = shiftArray[21];
+            break;
+        case 'W':
+            shiftMatch = shiftArray[22];
+            break;
+        case 'X':
+            shiftMatch = shiftArray[23];
+            break;
+        case 'Y':
+            shiftMatch = shiftArray[24];
+            break;
+        case 'Z':
+            shiftMatch = shiftArray[25];
+            break;
+    }
+
+    return shiftMatch;
 }
 
 
