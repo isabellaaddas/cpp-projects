@@ -24,6 +24,7 @@ private:
     string direction;
     void initArray();
     void initShiftArray();
+    const char matchChar(char orig);
 };
 
 

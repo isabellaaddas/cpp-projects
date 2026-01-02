@@ -67,7 +67,7 @@ void CaesarCipher::initArray() {
 }
 
 // Initialize the shiftArray with new alphabet based on shift number and
-// direction given by user
+// direction given by user (uppercase)
 void CaesarCipher::initShiftArray() {
 
     // Decide whether shift is leftward or rightward
@@ -98,6 +98,13 @@ void CaesarCipher::initShiftArray() {
         // }
     }
 }
+
+// Match argument "origin" with new char value from shiftArray, based on
+// "origin" position in alphaArray
+const char CaesarCipher::matchChar(char orig) {
+
+}
+
 
 CaesarCipher::~CaesarCipher() {
 
