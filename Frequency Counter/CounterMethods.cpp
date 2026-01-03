@@ -6,7 +6,7 @@
 
 using namespace std;
 
-/*** Function definitions ***/
+/* Function definitions */
 
 // Counts characters from input string and returns the total
 // (not including spaces)
