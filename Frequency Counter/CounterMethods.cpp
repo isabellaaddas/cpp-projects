@@ -53,3 +53,22 @@ const int countWords(string input) {
 
     return count;
 }
+
+// Counts the amount of times a certain character appears in
+// input string (including whitespace character)
+const int countChar(string input, char target) {
+
+    // Initialize count variable with 0
+    int count(0);
+
+    // Iterate over entire length of input string
+    for (int i = 0; i < input.length(); i++) {
+
+        // Only update the count when target char encountered
+        if (input[i] == target) {
+            count++;
+        }
+    }
+
+    return count;
+}
