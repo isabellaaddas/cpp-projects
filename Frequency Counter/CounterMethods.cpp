@@ -30,3 +30,23 @@ const int countChars(string input) {
 
     return count;
 }
+
+// Counts the full words from input string and returns the
+// total (not including spaces)
+const int countWords(string input) {
+
+    // Initialize count variable with 0
+    int count(0);
+
+    // Iterate over entire length of input string
+    for (int i = 0; i < input.length(); i++) {
+
+        // *Only* update the count when a space is encountered
+        // (indicates a break, which indicates a full word)
+        if (input[i] == ' ') {
+            count++;
+        }
+    }
+
+    return count;
+}
