@@ -8,4 +8,7 @@ include_directories("Caesar Cipher")
 add_executable(cpp_projects
         "Caesar Cipher/CaesarCipher.cpp"
         "Caesar Cipher/CaesarCipher.h"
-        "Caesar Cipher/main-for-cipher.cpp")
+        "Caesar Cipher/main-for-cipher.cpp"
+        "Frequency Counter/CounterMethods.h"
+        "Frequency Counter/CounterMethods.cpp"
+        "Frequency Counter/main-for-counter.cpp")
