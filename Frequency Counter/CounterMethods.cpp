@@ -42,8 +42,11 @@ const int countWords(string input) {
     for (int i = 0; i < input.length(); i++) {
 
         // *Only* update the count when a space is encountered
-        // (indicates a break, which indicates a full word)
+        // (indicates a break, which indicates a full word),
+        // or when end of string reached (last full word)
         if (input[i] == ' ') {
+            count++;
+        } else if (i == input.length() - 1) {
             count++;
         }
     }
