@@ -16,12 +16,14 @@ int main (int argc, char *argv[]) {
 
     // Prompt for input
     cout << "Enter any length string: ";
-    cin >> input;
+    getline(cin, input);
     cout << endl;
 
     // Set up variables for character and word counts
     int charCount = countChars(input);
     int wordCount = countWords(input);
+
+    cout << endl;
 
     // Output count
     cout << "Characters in string (not including spaces): "
