@@ -81,21 +81,22 @@ const int countWord(string input, string target) {
     // Initialize count variable with 0
     int count(0);
 
-    // Iterate over entire length of string
-    for (int i = 0; i < input.length(); i++) {
+    // Initialize starting index variable with 0
+    int index(0);
 
-        // If char in input string matches first char in target
-        // string, begin separate count
-        if (input[i] == target[0]) {
+    // Using the find method built into the string library,
+    // run while loop to find target substring (find will return
+    // the index where first encountered) until nothing returned (npos)
+    while (input.find(target, index) != string::npos) {
 
-            // Start separate count at next index
-            int j = i + 1;
-            int t = 1;
+        // Update count (method returned an index, so substring was
+        // found)
+        count++;
 
-            // Iterate until space encountered (end of word)
-            while (input[j] != ' ') {
-
-            }
-        }
+        // Update index to continue searching *after* newfound
+        // occurrence (result of find method + substring length)
+        index += input.find(target, index) + target.length();
     }
+
+    return count;
 }
