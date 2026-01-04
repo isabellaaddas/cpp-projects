@@ -6,3 +6,6 @@ cmake-build-*/
 *.exe
 *.out
 *.app
+
+# Input and output files
+*.txt
