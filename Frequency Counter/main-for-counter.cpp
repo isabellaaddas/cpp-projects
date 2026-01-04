@@ -22,6 +22,8 @@ int main (int argc, char *argv[]) {
     // Set up variables for character and word counts
     int charCount = countChars(input);
     int wordCount = countWords(input);
+    int oCount = countChar(input, 'o');
+    int dogCount = countWord(input, "dog");
 
     cout << endl;
 
@@ -31,4 +33,8 @@ int main (int argc, char *argv[]) {
 
     cout << "Words in string (not including spaces): " << wordCount
         << endl;
+
+    cout << "Letter 'o' in string: " << oCount << endl;
+
+    cout << "Substring 'dog' in string: " << dogCount << endl;
 }
