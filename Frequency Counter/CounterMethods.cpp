@@ -65,7 +65,8 @@ const int countChar(string input, char target) {
     for (int i = 0; i < input.length(); i++) {
 
         // Only update the count when target char encountered
-        if (input[i] == target) {
+        // (convert char to lower to ignore case sensitivity)
+        if (tolower(input[i]) == tolower(target)) {
             count++;
         }
     }
