@@ -15,10 +15,10 @@ const int countChar(string input, char target);
 const int countWord(string input, string target);
 
 // Function prototypes for counting methods from input file
-const int countChars(ifstream &file);
-const int countWords(ifstream &file);
-const int countLines(ifstream &file);
-const int countChars(ifstream &file, char target);
-const int countWords(ifstream &file, string target);
+const int countChars(string &fileName);
+const int countWords(string &fileName);
+const int countLines(string &fileName);
+const int countChars(string &fileName, char target);
+const int countWords(string &fileName, string target);
 
 #endif //CPP_PROJECTS_COUNTERMETHODS_H

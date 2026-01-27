@@ -3,6 +3,8 @@
 #include "CounterMethods.h"
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <stdexcept>
 
 using namespace std;
 
@@ -18,14 +20,10 @@ const int countChars(string input) {
     // Iterate over the entire length of the input string
     for (int i = 0; i < input.length(); i++) {
 
-        // If a space is encountered, exclude from character
-        // count
-        if (input[i] == ' ') {
-            continue;
+        // Only increment count when char is not whitespace
+        if (!isspace(input[i])) {
+            count++;
         }
-
-        // Otherwise, add character to count
-        count++;
     }
 
     return count;
@@ -99,4 +97,35 @@ const int countWord(string input, string target) {
     }
 
     return count;
+}
+
+// Counts characters from input file and returns the total
+// (not including spaces)
+const int countChars(string &fileName) {
+
+    // Open the file using a try and catch block (watch for
+    // errors with finding/opening files)
+    try {
+        ifstream file;
+        file.open(fileName);
+
+        // Initialize char variable i and counter variable
+        // count
+        char i;
+        int count(0);
+
+        while (file >> i) {
+
+            // Only increment count when the char input is
+            // not a whitespace character
+            if (!isspace(i)) {
+                count++;
+            }
+        }
+
+        return count;
+    } catch (exception e) {
+        cout << "Could not open file." << endl;
+        return -1;
+    }
 }
