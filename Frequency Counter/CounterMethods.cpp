@@ -123,9 +123,12 @@ const int countChars(string &fileName) {
             }
         }
 
+        // Before returning, close file
+        file.close();
+
         return count;
     } catch (exception e) {
-        cout << "Could not open file." << endl;
+        cout << "Could not open/close file." << endl;
         return -1;
     }
 }
