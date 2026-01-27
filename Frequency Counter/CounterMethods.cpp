@@ -99,8 +99,8 @@ const int countWord(string input, string target) {
     return count;
 }
 
-// Counts characters from input file and returns the total
-// (not including spaces)
+// Counts characters from input file (passed as a filename)
+// and returns the total (not including spaces)
 const int countChars(string &fileName) {
 
     // Open the file using a try and catch block (watch for
@@ -109,18 +109,61 @@ const int countChars(string &fileName) {
         ifstream file;
         file.open(fileName);
 
-        // Initialize char variable i and counter variable
+        // Initialize char variable c and counter variable
         // count
-        char i;
+        char c;
         int count(0);
 
-        while (file >> i) {
+        while (file >> c) {
 
             // Only increment count when the char input is
             // not a whitespace character
-            if (!isspace(i)) {
+            if (!isspace(c)) {
                 count++;
             }
+        }
+
+        // Before returning, close file
+        file.close();
+
+        return count;
+    } catch (exception e) {
+        cout << "Could not open/close file." << endl;
+        return -1;
+    }
+}
+
+// Counts the full words from input file (passed as a filename)
+// and returns the total (not including spaces)
+const int countWords(string &fileName) {
+
+    // Open the file using a try and catch block (watch for
+    // errors with finding/opening files)
+    try {
+        ifstream file;
+        file.open(fileName);
+
+        // Initialize char variable c and counter variable
+        // count
+        char c;
+        int count(0);
+
+        while (file >> c) {
+
+            // Only increment count when whitespace or a
+            // period is encountered, indicating that a word
+            // has ended (either a space, new line, tab, or
+            // end of a sentence)
+            if (isspace(c) || c == '.') {
+                count++;
+            }
+        }
+
+        // If count is not 0, there was some input to read and
+        // therefore the count must be incremented by 1 (the
+        // last word before end of file)
+        if (count != 0) {
+            count++;
         }
 
         // Before returning, close file
