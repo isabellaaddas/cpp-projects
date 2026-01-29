@@ -173,12 +173,9 @@ const int countWords(ifstream &file) {
 // and returns the total
 const int countLines(ifstream &file) {
 
-    // Open the file using a try and catch block (watch for
-    // errors with finding/opening files)
+    // Check if the file is open using try and catch block
+    // to handle potential errors during processing
     try {
-        ifstream file;
-        file.open(fileName);
-
         // Initialize char variable c and counter variable
         // count
         char c;
@@ -186,9 +183,8 @@ const int countLines(ifstream &file) {
 
         while (file >> c) {
 
-            // Only increment count when new line is
-            // encountered, which indicates a previous
-            // line has ended
+            // Only increment count when the char input is
+            // a new line character
             if (c == '\n') {
                 count++;
             }
@@ -199,7 +195,7 @@ const int countLines(ifstream &file) {
 
         return count;
     } catch (exception e) {
-        cout << "Could not open/close file." << endl;
+        cout << "Error while handling file." << endl;
         return -1;
     }
 }
