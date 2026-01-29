@@ -101,7 +101,7 @@ const int countWord(string input, string target) {
 
 // Counts characters from input file (passed as a filename)
 // and returns the total (not including spaces)
-const int countChars(string &fileName) {
+const int countChars(istream &file) {
 
     // Open the file using a try and catch block (watch for
     // errors with finding/opening files)
@@ -135,7 +135,7 @@ const int countChars(string &fileName) {
 
 // Counts the full words from input file (passed as a filename)
 // and returns the total (not including spaces)
-const int countWords(string &fileName) {
+const int countWords(istream &file) {
 
     // Open the file using a try and catch block (watch for
     // errors with finding/opening files)
@@ -178,7 +178,7 @@ const int countWords(string &fileName) {
 
 // Counts the lines from input file (passed as a filename)
 // and returns the total
-const int countLines(string &fileName) {
+const int countLines(istream &file) {
 
     // Open the file using a try and catch block (watch for
     // errors with finding/opening files)
