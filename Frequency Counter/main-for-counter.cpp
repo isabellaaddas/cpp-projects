@@ -42,4 +42,8 @@ int main (int argc, char *argv[]) {
     // Open up the file in directory by using a string
     // variable for the name
     string filename = "sample-input.txt";
+
+    // Set up variables for the new counts from the file
+    int fileCharCount = countChars(filename);
+
 }
