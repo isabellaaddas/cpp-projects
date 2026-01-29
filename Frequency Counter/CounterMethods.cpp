@@ -101,13 +101,12 @@ const int countWord(string input, string target) {
 
 // Counts characters from input file (passed as a filename)
 // and returns the total (not including spaces)
-const int countChars(istream &file) {
+const int countChars(ifstream &file) {
 
-    // Open the file using a try and catch block (watch for
-    // errors with finding/opening files)
+    // Check if the file is open using try and catch block
+    // to handle potential errors during argument passing
     try {
-        ifstream file;
-        file.open(fileName);
+        if (file.is_open())
 
         // Initialize char variable c and counter variable
         // count
@@ -135,7 +134,7 @@ const int countChars(istream &file) {
 
 // Counts the full words from input file (passed as a filename)
 // and returns the total (not including spaces)
-const int countWords(istream &file) {
+const int countWords(ifstream &file) {
 
     // Open the file using a try and catch block (watch for
     // errors with finding/opening files)
@@ -178,7 +177,7 @@ const int countWords(istream &file) {
 
 // Counts the lines from input file (passed as a filename)
 // and returns the total
-const int countLines(istream &file) {
+const int countLines(ifstream &file) {
 
     // Open the file using a try and catch block (watch for
     // errors with finding/opening files)
