@@ -47,7 +47,15 @@ int main (int argc, char *argv[]) {
 
         // Set up variables for the new counts from the file
         int fileCharCount = countChars(inputFile);
+        // AFTER each call, clear the EOF flags generated from
+        // the previous method and reset back to the beginning
+        inputFile.clear();
+        inputFile.seekg(0, ios::beg);
+
         int fileWordCount = countWords(inputFile);
+        inputFile.clear();
+        inputFile.seekg(0, ios::beg);
+
         int fileLineCount = countLines(inputFile);
 
         // Print results
