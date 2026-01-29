@@ -160,18 +160,17 @@ const int countLines(ifstream &file) {
     // Check if the file is open using try and catch block
     // to handle potential errors during processing
     try {
-        // Initialize char variable c and counter variable
+        // Initialize string variable line and counter variable
         // count
-        char c;
+        string line;
         int count(0);
 
-        while (file >> c) {
+        while (getline(file, line)) {
 
-            // Only increment count when the char input is
-            // a new line character
-            if (c == '\n') {
-                count++;
-            }
+            // For this method, simply increment the counter
+            // for every while loop execution (which will count
+            // all the lines)
+            count++;
         }
 
         return count;
