@@ -47,16 +47,15 @@ int main (int argc, char *argv[]) {
 
         // Set up variables for the new counts from the file
         int fileCharCount = countChars(inputFile);
-        // AFTER each call, clear the EOF flags generated from
-        // the previous method and reset back to the beginning
-        inputFile.clear();
-        inputFile.seekg(0, ios::beg);
+        inputFile.close();
 
+        inputFile.open("sample-input.txt");
         int fileWordCount = countWords(inputFile);
-        inputFile.clear();
-        inputFile.seekg(0, ios::beg);
+        inputFile.close();
 
+        inputFile.open("sample-input.txt");
         int fileLineCount = countLines(inputFile);
+        inputFile.close();
 
         // Print results
         cout << "Characters in file: " << fileCharCount << endl;
