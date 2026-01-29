@@ -54,6 +54,9 @@ int main (int argc, char *argv[]) {
         cout << "Characters in file: " << fileCharCount << endl;
         cout << "Words in file: " << fileWordCount << endl;
         cout << "Lines in file: " << fileLineCount << endl;
+
+        // Close file
+        inputFile.close();
     } catch (exception e) {
         cout << e.what() << endl;
     }
