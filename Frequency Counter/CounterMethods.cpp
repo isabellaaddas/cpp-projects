@@ -175,3 +175,46 @@ const int countWords(string &fileName) {
         return -1;
     }
 }
+
+// Counts the lines from input file (passed as a filename)
+// and returns the total
+const int countLines(string &fileName) {
+
+    // Open the file using a try and catch block (watch for
+    // errors with finding/opening files)
+    try {
+        ifstream file;
+        file.open(fileName);
+
+        // Initialize char variable c and counter variable
+        // count
+        char c;
+        int count(0);
+
+        while (file >> c) {
+
+            // Only increment count when whitespace or a
+            // period is encountered, indicating that a word
+            // has ended (either a space, new line, tab, or
+            // end of a sentence)
+            if (isspace(c) || c == '.') {
+                count++;
+            }
+        }
+
+        // If count is not 0, there was some input to read and
+        // therefore the count must be incremented by 1 (the
+        // last word before end of file)
+        if (count != 0) {
+            count++;
+        }
+
+        // Before returning, close file
+        file.close();
+
+        return count;
+    } catch (exception e) {
+        cout << "Could not open/close file." << endl;
+        return -1;
+    }
+}
