@@ -61,11 +61,16 @@ int main (int argc, char *argv[]) {
         int fileOCount = countChar(inputFile, 'o');
         inputFile.close();
 
+        inputFile.open("sample-input.txt");
+        int fileDogCount = countWord(inputFile, "dog");
+        inputFile.close();
+
         // Print results
         cout << "Characters in file: " << fileCharCount << endl;
         cout << "Words in file: " << fileWordCount << endl;
         cout << "Lines in file: " << fileLineCount << endl;
         cout << "Letter 'o' in file: " << fileOCount << endl;
+        cout << "Substring 'dog' in file: " << fileDogCount << endl;
 
         // Close file
         inputFile.close();
