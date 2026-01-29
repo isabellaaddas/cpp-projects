@@ -57,10 +57,15 @@ int main (int argc, char *argv[]) {
         int fileLineCount = countLines(inputFile);
         inputFile.close();
 
+        inputFile.open("sample-input.txt");
+        int fileOCount = countChar(inputFile, 'o');
+        inputFile.close();
+
         // Print results
         cout << "Characters in file: " << fileCharCount << endl;
         cout << "Words in file: " << fileWordCount << endl;
         cout << "Lines in file: " << fileLineCount << endl;
+        cout << "Letter 'o' in file: " << fileOCount << endl;
 
         // Close file
         inputFile.close();
