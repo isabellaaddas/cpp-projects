@@ -130,16 +130,13 @@ const int countChars(ifstream &file) {
     }
 }
 
-/*// Counts the full words from input file (passed as a filename)
+// Counts the full words from input file (passed as a filename)
 // and returns the total (not including spaces)
 const int countWords(ifstream &file) {
 
-    // Open the file using a try and catch block (watch for
-    // errors with finding/opening files)
+    // Check if the file is open using try and catch block
+    // to handle potential errors during processing
     try {
-        ifstream file;
-        file.open(fileName);
-
         // Initialize char variable c and counter variable
         // count
         char c;
@@ -147,18 +144,17 @@ const int countWords(ifstream &file) {
 
         while (file >> c) {
 
-            // Only increment count when whitespace or a
-            // period is encountered, indicating that a word
-            // has ended (either a space, new line, tab, or
-            // end of a sentence)
-            if (isspace(c) || c == '.') {
+            // Only increment count when the char input is
+            // a space, which indicates a word has finished
+            // (also counts when punctuation is used, since
+            // a space will follow those cases
+            if (isspace(c)) {
                 count++;
             }
         }
 
-        // If count is not 0, there was some input to read and
-        // therefore the count must be incremented by 1 (the
-        // last word before end of file)
+        // At the end, if count is not 0, increment one more
+        // time to count the last word
         if (count != 0) {
             count++;
         }
@@ -168,7 +164,7 @@ const int countWords(ifstream &file) {
 
         return count;
     } catch (exception e) {
-        cout << "Could not open/close file." << endl;
+        cout << "Error while handling file." << endl;
         return -1;
     }
 }
@@ -206,4 +202,4 @@ const int countLines(ifstream &file) {
         cout << "Could not open/close file." << endl;
         return -1;
     }
-}*/
+}
