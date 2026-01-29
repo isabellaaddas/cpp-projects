@@ -133,26 +133,17 @@ const int countWords(ifstream &file) {
     // Check if the file is open using try and catch block
     // to handle potential errors during processing
     try {
-        // Initialize char variable c and counter variable
+        // Initialize string variable line and counter variable
         // count
-        char c;
+        string line;
         int count(0);
 
-        while (file >> c) {
+        while (getline(file, line)) {
 
-            // Only increment count when the char input is
-            // a space, which indicates a word has finished
-            // (also counts when punctuation is used, since
-            // a space will follow those cases
-            if (c == ' ') {
-                count++;
-            }
-        }
-
-        // At the end, if count is not 0, increment one more
-        // time to count the last word
-        if (count != 0) {
-            count++;
+            // Pass the line through to the countWords(string)
+            // method and increment the count with each call
+            // to that method
+            count += countWords(line);
         }
 
         return count;
