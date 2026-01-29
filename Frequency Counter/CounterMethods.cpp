@@ -148,7 +148,7 @@ const int countWords(ifstream &file) {
             // a space, which indicates a word has finished
             // (also counts when punctuation is used, since
             // a space will follow those cases
-            if (isspace(c)) {
+            if (c == ' ') {
                 count++;
             }
         }
