@@ -106,18 +106,17 @@ const int countChars(ifstream &file) {
     // Check if the file is open using try and catch block
     // to handle potential errors during processing
     try {
-        // Initialize char variable c and counter variable
+        // Initialize string variable line and counter variable
         // count
-        char c;
+        string line;
         int count(0);
 
-        while (file >> c) {
+        while (getline(file, line)) {
 
-            // Only increment count when the char input is
-            // not a whitespace character
-            if (!isspace(c)) {
-                count++;
-            }
+            // Pass the line through to the countChars(string)
+            // method and increment the count with each call
+            // to that method
+            count += countChars(line);
         }
 
         return count;
