@@ -104,10 +104,8 @@ const int countWord(string input, string target) {
 const int countChars(ifstream &file) {
 
     // Check if the file is open using try and catch block
-    // to handle potential errors during argument passing
+    // to handle potential errors during processing
     try {
-        if (file.is_open())
-
         // Initialize char variable c and counter variable
         // count
         char c;
@@ -127,7 +125,7 @@ const int countChars(ifstream &file) {
 
         return count;
     } catch (exception e) {
-        cout << "Could not open/close file." << endl;
+        cout << "Error while handling file." << endl;
         return -1;
     }
 }
