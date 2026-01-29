@@ -179,3 +179,30 @@ const int countLines(ifstream &file) {
         return -1;
     }
 }
+
+// Counts the amount of times a certain character appears in
+// input file (including whitespace character)
+const int countChar(ifstream &file, char target) {
+
+    // Check if the file is open using try and catch block
+    // to handle potential errors during processing
+    try {
+        // Initialize string variable line and counter variable
+        // count
+        string line;
+        int count(0);
+
+        while (getline(file, line)) {
+
+            // Pass the line from stream up to the countChar(string)
+            // method and increment the count with the total
+            // from each call to that method
+            count += countChar(line, target);
+        }
+
+        return count;
+    } catch (exception e) {
+        cout << "Error while handling file." << endl;
+        return -1;
+    }
+}
