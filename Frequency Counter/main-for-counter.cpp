@@ -38,4 +38,8 @@ int main (int argc, char *argv[]) {
     cout << "Letter 'o' in string: " << oCount << endl;
 
     cout << "Substring 'dog' in string: " << dogCount << endl;
+
+    // Open up the file in directory by using a string
+    // variable for the name
+    string filename = "sample-input.txt";
 }
