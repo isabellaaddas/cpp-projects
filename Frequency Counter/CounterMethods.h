@@ -19,6 +19,6 @@ const int countChars(ifstream &file);
 const int countWords(ifstream &file);
 const int countLines(ifstream &file);
 const int countChar(ifstream &file, char target);
-const int countWords(ifstream &file, string target);
+const int countWord(ifstream &file, string target);
 
 #endif //CPP_PROJECTS_COUNTERMETHODS_H
