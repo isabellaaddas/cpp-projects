@@ -39,11 +39,15 @@ int main (int argc, char *argv[]) {
 
     cout << "Substring 'dog' in string: " << dogCount << endl;
 
-    // Open up the file in directory by using a string
-    // variable for the name
-    string filename = "sample-input.txt";
+    // Open up the file in directory by with try and
+    // catch block
+    try {
+        // Hard code the input file for testing purposes
+        ifstream inputFile("sample-input.txt");
 
-    // Set up variables for the new counts from the file
-    int fileCharCount = countChars(filename);
-
+        // Set up variables for the new counts from the file
+        int fileCharCount = countChars(inputFile);
+    } catch (exception e) {
+        cout << e.what() << endl;
+    }
 }
