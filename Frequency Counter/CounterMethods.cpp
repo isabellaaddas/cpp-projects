@@ -130,7 +130,7 @@ const int countChars(ifstream &file) {
     }
 }
 
-// Counts the full words from input file (passed as a filename)
+/*// Counts the full words from input file (passed as a filename)
 // and returns the total (not including spaces)
 const int countWords(ifstream &file) {
 
@@ -206,4 +206,4 @@ const int countLines(ifstream &file) {
         cout << "Could not open/close file." << endl;
         return -1;
     }
-}
+}*/
