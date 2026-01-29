@@ -47,9 +47,13 @@ int main (int argc, char *argv[]) {
 
         // Set up variables for the new counts from the file
         int fileCharCount = countChars(inputFile);
+        int fileWordCount = countWords(inputFile);
+        int fileLineCount = countLines(inputFile);
 
         // Print results
         cout << "Characters in file: " << fileCharCount << endl;
+        cout << "Words in file: " << fileWordCount << endl;
+        cout << "Lines in file: " << fileLineCount << endl;
     } catch (exception e) {
         cout << e.what() << endl;
     }
