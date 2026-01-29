@@ -120,9 +120,6 @@ const int countChars(ifstream &file) {
             }
         }
 
-        // Before returning, close file
-        file.close();
-
         return count;
     } catch (exception e) {
         cout << "Error while handling file." << endl;
@@ -159,9 +156,6 @@ const int countWords(ifstream &file) {
             count++;
         }
 
-        // Before returning, close file
-        file.close();
-
         return count;
     } catch (exception e) {
         cout << "Error while handling file." << endl;
@@ -189,9 +183,6 @@ const int countLines(ifstream &file) {
                 count++;
             }
         }
-
-        // Before returning, close file
-        file.close();
 
         return count;
     } catch (exception e) {
