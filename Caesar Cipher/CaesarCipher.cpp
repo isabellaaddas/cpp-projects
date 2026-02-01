@@ -27,12 +27,16 @@ CaesarCipher::CaesarCipher(int newShift, string &newDirection) {
     direction = newDirection;
 }
 
-const string CaesarCipher::encrypt(string message) {
+const string CaesarCipher::encode(string message) {
     return "";
 }
 
-const string CaesarCipher::decrypt(string message) {
+const string CaesarCipher::decode(string message) {
     return "";
+}
+
+const char CaesarCipher::translate(char let) {
+
 }
 
 CaesarCipher::~CaesarCipher() {
