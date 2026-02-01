@@ -40,6 +40,13 @@ const string CaesarCipher::decode(string message) {
 // the shift
 const char CaesarCipher::translate(char let) {
 
+    // Two cases of calculations: left or right shift
+    // Split up with if-else branch
+    if (direction == "left") {
+
+    } else {
+
+    }
 }
 
 CaesarCipher::~CaesarCipher() {
