@@ -27,8 +27,25 @@ CaesarCipher::CaesarCipher(int newShift, string &newDirection) {
     direction = newDirection;
 }
 
+// For a given string, translates entire message into
+// a new, encrypted message based on shift value and
+// direction
 const string CaesarCipher::encode(string message) {
-    return "";
+
+    // Set up variable for new string to return
+    string newMsg = "";
+
+    // Iterate over the length of the original message
+    for (int i = 0; i < message.length(); i++) {
+
+        // Using the translate() method, call at
+        // each char value in message string and
+        // build out the new message with translated
+        // char values
+        newMsg += translate(message[i]);
+    }
+
+    return newMsg;
 }
 
 const string CaesarCipher::decode(string message) {
