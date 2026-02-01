@@ -35,6 +35,9 @@ const string CaesarCipher::decode(string message) {
     return "";
 }
 
+// For a given char input, translates the value into
+// a different char value (all alphabetical) based on
+// the shift
 const char CaesarCipher::translate(char let) {
 
 }
