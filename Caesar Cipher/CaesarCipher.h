@@ -18,6 +18,7 @@ public:
 private:
     int shift;
     string direction;
+    char reverseTranslate(char let);
 };
 
 
