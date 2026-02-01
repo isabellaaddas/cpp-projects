@@ -12,8 +12,8 @@ public:
     CaesarCipher(int newShift);
     CaesarCipher(int newShift, string &newDirection);
     ~CaesarCipher();
-    const string encode(string message);
-    const string decode(string message);
+    const string encode(string &message);
+    const string decode(string &message);
     const char translate(char let);
 private:
     int shift;

@@ -30,7 +30,7 @@ CaesarCipher::CaesarCipher(int newShift, string &newDirection) {
 // For a given string, translates entire message into
 // a new, encrypted message based on shift value and
 // direction
-const string CaesarCipher::encode(string message) {
+const string CaesarCipher::encode(string &message) {
 
     // Set up variable for new string to return
     string newMsg = "";
@@ -48,7 +48,7 @@ const string CaesarCipher::encode(string message) {
     return newMsg;
 }
 
-const string CaesarCipher::decode(string message) {
+const string CaesarCipher::decode(string &message) {
     return "";
 }
 
