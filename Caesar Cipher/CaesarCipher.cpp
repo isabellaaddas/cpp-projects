@@ -63,7 +63,23 @@ const char CaesarCipher::translate(char let) {
         }
     } else {
 
+        // For the right shift, the same logic applies but
+        // with adding the shift number to the char value
+        if ((let >= 65) && (let <= 90)) {
+
+            // When the char value + shift is over 90,
+            // must subtract the length of the alphabet
+            // to wrap around the letters
+            transChar = ((let + shift) > 90) ? (let + shift) - 26 : let + shift;
+        } else if ((let >= 97) && (let <= 122)) {
+
+            // The same logic applies to lowercase range
+            transChar = ((let + shift) > 122) ? (let + shift) - 26 : let + shift;
+        }
     }
+
+    // Finally, return the translated char value
+    return transChar;
 }
 
 CaesarCipher::~CaesarCipher() {
