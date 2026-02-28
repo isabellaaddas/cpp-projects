@@ -117,7 +117,47 @@ const char CaesarCipher::translate(char let) {
 // into a different char value (all alphabetical) based
 // on the shift
 char CaesarCipher::reverseTranslate(char let) {
+    char transChar('\0');
 
+    // Two cases of calculations: left or right shift
+    // Split up with if-else branch
+    if (direction == "left") {
+
+        // In reverse left shift, all char values will have
+        // the shift number added them
+
+        // Split up based on char value range (lowercase
+        // and uppercase values accepted!)
+        if ((let >= 65) && (let <= 90)) {
+
+            // When the char value + shift is over 90,
+            // must subtract the length of the alphabet
+            // to wrap around the letters
+            transChar = ((let + shift) > 90) ? (let + shift) - 26 : let + shift;
+        } else if ((let >= 97) && (let <= 122)) {
+
+            // The same logic applies to lowercase range
+            transChar = ((let + shift) > 122) ? (let + shift) - 26 : let + shift;
+        }
+    } else {
+
+        // For the right reverse shift, the same logic applies
+        // but by subtracting the shift number to the char value
+        if ((let >= 65) && (let <= 90)) {
+
+            // When the char value - shift is under 65,
+            // must add the length of the alphabet
+            // to wrap around the letters
+            transChar = ((let - shift) < 65) ? (let - shift) + 26 : let - shift;
+        } else if ((let >= 97) && (let <= 122)) {
+
+            // The same logic applies to lowercase range
+            transChar = ((let - shift) < 97) ? (let - shift) + 26 : let - shift;
+        }
+    }
+
+    // Finally, return the translated char value
+    return transChar;
 }
 
 CaesarCipher::~CaesarCipher() {
