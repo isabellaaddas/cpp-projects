@@ -49,7 +49,21 @@ const string CaesarCipher::encode(string &message) {
 }
 
 const string CaesarCipher::decode(string &message) {
-    return "";
+
+    // Set up variable for new string to return
+    string newMsg = "";
+
+    // Iterate over the length of the original message
+    for (int i = 0; i < message.length(); i++) {
+
+        // Using the translate() method, call at
+        // each char value in message string and
+        // build out the new message with translated
+        // char values
+        newMsg += reverseTranslate(message[i]);
+    }
+
+    return newMsg;
 }
 
 // For a given char input, translates the value into
@@ -97,6 +111,13 @@ const char CaesarCipher::translate(char let) {
 
     // Finally, return the translated char value
     return transChar;
+}
+
+// For a given char input, reverse translates the value
+// into a different char value (all alphabetical) based
+// on the shift
+char CaesarCipher::reverseTranslate(char let) {
+
 }
 
 CaesarCipher::~CaesarCipher() {
